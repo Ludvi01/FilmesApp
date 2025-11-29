@@ -29,7 +29,7 @@ class FavoriteActivity : AppCompatActivity() {
                 title = fav.title,
                 director = fav.director,
                 year = fav.year,
-                runtimeMinutes = fav.runtimeMinutes,
+                duration = fav.duration,
                 description = fav.description,
                 rating = fav.rating,
                 genre = fav.genre
