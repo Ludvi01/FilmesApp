@@ -12,4 +12,7 @@ interface MovieDao {
 
     @Insert
     fun insertFavorite(movie: FavoriteMovie)
+
+    @Query("SELECT * FROM favorite_movies WHERE title = :title AND year = :year LIMIT 1")
+    fun findByTitleAndYear(title: String, year: Int): FavoriteMovie?
 }
