@@ -7,7 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MovieAdapter(
-    private var movies: List<Movie>
+    private var movies: List<Movie>,
+    private val onItemClick: (Movie) -> Unit
 ) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,6 +28,10 @@ class MovieAdapter(
         holder.textTitle.text = movie.title
         holder.textDirector.text = movie.director
         holder.textYearAndLength.text = "${movie.year} • ${movie.runtimeMinutes} perc"
+
+        holder.itemView.setOnClickListener {
+            onItemClick(movie)
+        }
     }
 
     override fun getItemCount(): Int = movies.size
