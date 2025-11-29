@@ -32,7 +32,7 @@ class MovieDetailActivity : AppCompatActivity() {
         val textGenre: TextView = findViewById(R.id.textDetailGenre)
         val textRating: TextView = findViewById(R.id.textDetailRating)
         val textDescription: TextView = findViewById(R.id.textDetailDescription)
-        val buttonSave: Button = findViewById(R.id.buttonSave)
+        val button: Button = findViewById(R.id.button)
 
         movie?.let { m ->
             textTitle.text = m.title
@@ -43,37 +43,40 @@ class MovieDetailActivity : AppCompatActivity() {
             textDescription.text = m.description ?: "Nincs leírás."
         }
 
+        // létezik‑e már
+        val existing =  movie?.let { m ->
+            movieDao.findByTitleAndYear(m.title, m.year)
+        }
+
+        // induláskor gomb felirat
+        button.text = if (existing != null) "Eltávolítás" else "Mentés"
+
         // Mentés gomb
-        buttonSave.setOnClickListener {
-            movie?.let { m ->
+        button.setOnClickListener {
+            val current  =  movie?.let { m ->
+                movieDao.findByTitleAndYear(m.title, m.year)
+            }
 
-                // létezik‑e már
-                val existing = movieDao.findByTitleAndYear(m.title, m.year)
-
-                if (existing != null) {
-                    // szerepel egyszer
-                    Toast.makeText(
-                        this,
-                        "Korábban már hozzáadtad a kedvencekhez.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    // mentés
+            if (current  != null) {
+                //  kedvencekből töröljük
+                movieDao.deleteFavorite(current )
+                Toast.makeText(this, "Törölve a kedvencekből", Toast.LENGTH_SHORT).show()
+                button.text = "Mentés"
+            } else {
+                // kedvencekbe mentjük
+                movie?.let { m ->
                     val favorite = FavoriteMovie(
                         title = m.title,
                         director = m.director,
                         year = m.year,
-                        duration = m.duration,
-                        description = m.description,
                         rating = m.rating,
+                        description = m.description,
+                        duration = m.duration,
                         genre = m.genre
                     )
                     movieDao.insertFavorite(favorite)
-                    Toast.makeText(
-                        this,
-                        "Sikeresen hozzáadtad a kedvencekhez!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this, "Hozzáadva a kedvencekhez", Toast.LENGTH_SHORT).show()
+                    button.text = "Eltávolítás"
                 }
             }
         }
