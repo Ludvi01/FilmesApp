@@ -60,13 +60,13 @@
         android:layout_height="0dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@id/textDetailRating"
-        app:layout_constraintBottom_toTopOf="@id/buttonSave"
+        app:layout_constraintBottom_toTopOf="@id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Hosszabb leírás a filmről..." />
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Mentés"
