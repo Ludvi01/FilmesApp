@@ -12,12 +12,25 @@ import com.google.android.material.appbar.MaterialToolbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MovieAdapter
     private lateinit var movieDao: MovieDao
+
+    private fun changeLanguage(lang: String) {
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+
+        val config = resources.configuration
+        config.setLocale(locale)
+
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        recreate()
+    }
 
     // Activity létrehozása
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,11 +83,22 @@ class MainActivity : AppCompatActivity() {
     // Menü elemek
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+
             R.id.menu_favorites -> {
-                val intent = Intent(this, FavoriteActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, FavoriteActivity::class.java))
                 true
             }
+
+            R.id.menu_lang_hu -> {
+                changeLanguage("hu")
+                true
+            }
+
+            R.id.menu_lang_en -> {
+                changeLanguage("en")
+                true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
