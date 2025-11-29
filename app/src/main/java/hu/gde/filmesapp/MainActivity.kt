@@ -1,5 +1,6 @@
 package hu.gde.filmesapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,10 +23,15 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerViewMovies)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        adapter = MovieAdapter(emptyList())
+        adapter = MovieAdapter(emptyList()) { movie ->
+            val intent = Intent(this, MovieDetailActivity::class.java)
+            intent.putExtra("movie", movie)
+            startActivity(intent)
+        }
         recyclerView.adapter = adapter
 
         loadMovies()
+
     }
 
     private fun loadMovies() {
