@@ -27,7 +27,7 @@ class MovieAdapter(
         val movie = movies[position]
         holder.textTitle.text = movie.title
         holder.textDirector.text = movie.director
-        holder.textYearAndLength.text = "${movie.year} • ${movie.runtimeMinutes} perc"
+        holder.textYearAndLength.text = "${movie.year} • ${movie.duration} perc"
 
         holder.itemView.setOnClickListener {
             onItemClick(movie)
