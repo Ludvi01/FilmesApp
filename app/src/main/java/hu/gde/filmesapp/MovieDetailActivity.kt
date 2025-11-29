@@ -40,7 +40,7 @@ class MovieDetailActivity : AppCompatActivity() {
             textYearRuntime.text = "${m.year} • ${m.duration} ${getString(R.string.minutes)}"
             textGenre.text = "${getString(R.string.genre)} ${m.genre ?: "-"}"
             textRating.text = "${getString(R.string.rating)} ${m.rating ?: "-"} /10"
-            textDescription.text = m.description ?: "${getString(R.string.no_description)}"
+            textDescription.text = m.description ?: getString(R.string.no_description)
         }
 
         // létezik‑e már
@@ -49,7 +49,7 @@ class MovieDetailActivity : AppCompatActivity() {
         }
 
         // induláskor gomb felirat
-        button.text = if (existing != null) "${getString(R.string.remove)}" else "${getString(R.string.save)}"
+        button.text = if (existing != null) getString(R.string.remove) else getString(R.string.save)
 
         // Mentés gomb
         button.setOnClickListener {
@@ -60,8 +60,8 @@ class MovieDetailActivity : AppCompatActivity() {
             if (current  != null) {
                 //  kedvencekből töröljük
                 movieDao.deleteFavorite(current )
-                Toast.makeText(this, "@string/removed_from_favorites", Toast.LENGTH_SHORT).show()
-                button.text = "${getString(R.string.save)}"
+                Toast.makeText(this, getString(R.string.removed_from_favorites), Toast.LENGTH_SHORT).show()
+                button.text = getString(R.string.save)
             } else {
                 // kedvencekbe mentjük
                 movie?.let { m ->
@@ -75,8 +75,8 @@ class MovieDetailActivity : AppCompatActivity() {
                         genre = m.genre
                     )
                     movieDao.insertFavorite(favorite)
-                    Toast.makeText(this, "@string/saved_to_favorites", Toast.LENGTH_SHORT).show()
-                    button.text = "${getString(R.string.remove)}"
+                    Toast.makeText(this, getString(R.string.saved_to_favorites), Toast.LENGTH_SHORT).show()
+                    button.text = getString(R.string.remove)
                 }
             }
         }
