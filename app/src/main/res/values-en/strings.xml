@@ -7,14 +7,16 @@
     <string name="language_en">English</string>
     <string name="saved_to_favorites">Movie added to favorites!</string>
     <string name="removed_from_favorites">Removed from favorites</string>
-    <string name="genre">Genre:</string>
-    <string name="rating">Rating:</string>
+    <string name="genre">Genre</string>
+    <string name="rating">Rating</string>
     <string name="no_description">No description.</string>
     <string name="minutes">minutes</string>
     <string name="movies_download_failed">Failed to download movies!</string>
-    <string name="network_error">Network error:</string>
+    <string name="network_error">Network error</string>
     <string name="movie_name">Movie name</string>
     <string name="director">Director</string>
     <string name="year_length">Year • Length</string>
     <string name="star">★</string>
+    <string name="long_dscription">Long description</string>
+    <string name="save_remove_button">Save/Remove button</string>
 </resources>

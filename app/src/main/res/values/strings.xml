@@ -7,14 +7,16 @@
     <string name="language_en">Angol</string>
     <string name="saved_to_favorites">Hozzáadva a kedvencekhez</string>
     <string name="removed_from_favorites">Törölve a kedvencekből</string>
-    <string name="genre">Műfaj:</string>
-    <string name="rating">Értékelés:</string>
+    <string name="genre">Műfaj</string>
+    <string name="rating">Értékelés</string>
     <string name="no_description">Nincs leírás.</string>
     <string name="minutes">perc</string>
     <string name="movies_download_failed">Nem sikerült letölteni a filmeket!</string>
-    <string name="network_error">Hálózati hiba:</string>
+    <string name="network_error">Hálózati hiba</string>
     <string name="movie_name">Film címe</string>
     <string name="director">Rendező</string>
     <string name="year_length">Évszám • Hossz</string>
     <string name="star">★</string>
+    <string name="long_dscription">leírás</string>
+    <string name="save_remove_button">Mentés/Eltávolítás gomb</string>
 </resources>
