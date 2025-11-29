@@ -11,4 +11,6 @@
     <string name="rating">Értékelés:</string>
     <string name="no_description">Nincs leírás.</string>
     <string name="minutes">perc</string>
+    <string name="movies_download_failed">Nem sikerült letölteni a filmeket!</string>
+    <string name="network_error">Hálózati hiba:</string>
 </resources>

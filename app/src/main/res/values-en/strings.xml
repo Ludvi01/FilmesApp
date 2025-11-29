@@ -11,4 +11,6 @@
     <string name="rating">Rating:</string>
     <string name="no_description">No description.</string>
     <string name="minutes">minutes</string>
+    <string name="movies_download_failed">Failed to download movies!</string>
+    <string name="network_error">Network error:</string>
 </resources>
