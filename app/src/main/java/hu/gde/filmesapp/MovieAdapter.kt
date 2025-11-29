@@ -30,7 +30,7 @@ class MovieAdapter(
         val movie = movies[position]
         holder.textTitle.text = movie.title
         holder.textDirector.text = movie.director
-        holder.textYearAndLength.text = "${movie.year} • ${movie.duration} perc"
+        holder.textYearAndLength.text = "${movie.year} • ${movie.duration} ${holder.itemView.context.getString(R.string.minutes)}"
 
         val key = "${movie.title}_${movie.year}"
 
