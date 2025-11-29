@@ -13,4 +13,8 @@
     <string name="minutes">perc</string>
     <string name="movies_download_failed">Nem sikerült letölteni a filmeket!</string>
     <string name="network_error">Hálózati hiba:</string>
+    <string name="movie_name">Film címe</string>
+    <string name="director">Rendező</string>
+    <string name="year_length">Évszám • Hossz</string>
+    <string name="star">★</string>
 </resources>

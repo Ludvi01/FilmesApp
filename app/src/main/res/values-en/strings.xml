@@ -13,4 +13,8 @@
     <string name="minutes">minutes</string>
     <string name="movies_download_failed">Failed to download movies!</string>
     <string name="network_error">Network error:</string>
+    <string name="movie_name">Movie name</string>
+    <string name="director">Director</string>
+    <string name="year_length">Year • Length</string>
+    <string name="star">★</string>
 </resources>
