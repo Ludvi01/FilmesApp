@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Film címe" />
+        tools:text="@string/movie_name" />
 
     <TextView
         android:id="@+id/textDetailDirector"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toBottomOf="@id/textDetailTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Rendező neve" />
+        tools:text="@string/director" />
 
     <TextView
         android:id="@+id/textDetailYearRuntime"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@id/textDetailDirector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="1999 • 136 perc" />
+        tools:text="@string/year_length" />
 
     <TextView
         android:id="@+id/textDetailGenre"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@id/textDetailYearRuntime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Műfaj: Sci-Fi, Akció" />
+        tools:text="@string/genre" />
 
     <TextView
         android:id="@+id/textDetailRating"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/textDetailGenre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Értékelés: 8.5/10" />
+        tools:text="@string/rating" />
 
     <TextView
         android:id="@+id/textDetailDescription"
@@ -63,12 +63,13 @@
         app:layout_constraintBottom_toTopOf="@id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Hosszabb leírás a filmről..." />
+        tools:text="@string/long_dscription" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        tools:text="@string/save_remove_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
