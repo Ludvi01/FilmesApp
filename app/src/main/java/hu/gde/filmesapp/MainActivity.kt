@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@MainActivity,
-                        "Nem sikerült letölteni a filmeket!",
+                        getString(R.string.movies_download_failed),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<Movie>>, t: Throwable) {
                 Toast.makeText(
                     this@MainActivity,
-                    "Hálózati hiba: ${t.message}",
+                    "${getString(R.string.network_error)} ${t.message}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
