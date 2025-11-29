@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FilmesApp</string>
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
+    <string name="favorites">Favorites</string>
+    <string name="language_hu">Hungarian</string>
+    <string name="language_en">English</string>
+    <string name="saved_to_favorites">Movie added to favorites!</string>
+    <string name="removed_from_favorites">Removed from favorites</string>
+</resources>
