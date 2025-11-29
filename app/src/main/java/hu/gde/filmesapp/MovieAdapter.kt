@@ -48,8 +48,18 @@ class MovieAdapter(
     override fun getItemCount(): Int = movies.size
 
     fun updateFavorites(keys: Set<String>) {
+        val oldFavoriteKeys = favoriteKeys
         favoriteKeys = keys
-        notifyDataSetChanged()
+
+        movies.forEachIndexed { index, movie ->
+            val key = "${movie.title}_${movie.year}"
+            val wasFav = oldFavoriteKeys.contains(key)
+            val isFav = favoriteKeys.contains(key)
+
+            if (wasFav != isFav) {
+                notifyItemChanged(index)
+            }
+        }
     }
 
     fun updateMovies(newMovies: List<Movie>) {
