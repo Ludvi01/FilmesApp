@@ -7,4 +7,8 @@
     <string name="language_en">Angol</string>
     <string name="saved_to_favorites">Hozzáadva a kedvencekhez</string>
     <string name="removed_from_favorites">Törölve a kedvencekből</string>
+    <string name="genre">Műfaj:</string>
+    <string name="rating">Értékelés:</string>
+    <string name="no_description">Nincs leírás.</string>
+    <string name="minutes">perc</string>
 </resources>
