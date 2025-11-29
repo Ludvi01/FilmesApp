@@ -13,17 +13,22 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MovieAdapter
+    private lateinit var movieDao: MovieDao
 
     // Activity létrehozása
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Room DB + DAO
+        val db = AppDatabase.getInstance(applicationContext)
+        movieDao = db.movieDao()
+
+        // Toolbar
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -38,7 +43,22 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         loadMovies()
+        refreshFavorites()
+    }
 
+    private fun refreshFavorites() {
+        val favorites = movieDao.getAllFavorites()
+
+        val keys = favorites.map { fav ->
+            "${fav.title}_${fav.year}"
+        }.toSet()
+
+        adapter.updateFavorites(keys)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refreshFavorites()
     }
 
     // Menü létrehozása
