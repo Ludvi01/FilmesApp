@@ -38,8 +38,8 @@ class MovieDetailActivity : AppCompatActivity() {
             textTitle.text = m.title
             textDirector.text = m.director
             textYearRuntime.text = "${m.year} • ${m.duration} ${getString(R.string.minutes)}"
-            textGenre.text = "${getString(R.string.genre)} ${m.genre ?: "-"}"
-            textRating.text = "${getString(R.string.rating)} ${m.rating ?: "-"} /10"
+            textGenre.text = "${getString(R.string.genre)}: ${m.genre ?: "-"}"
+            textRating.text = "${getString(R.string.rating)}: ${m.rating ?: "-"} /10"
             textDescription.text = m.description ?: getString(R.string.no_description)
         }
 
