@@ -42,5 +42,5 @@
         android:id="@+id/textYearAndLength"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1999 • 120 perc" />
+        android:text="Évszám • Hossz" />
 </LinearLayout>
