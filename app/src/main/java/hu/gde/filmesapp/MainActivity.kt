@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<Movie>>, t: Throwable) {
                 Toast.makeText(
                     this@MainActivity,
-                    "${getString(R.string.network_error)} ${t.message}",
+                    "${getString(R.string.network_error)}: ${t.message}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
