@@ -4,8 +4,19 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 tools:context="hu.gde.filmesapp.MainActivity">
 
-<item
-    android:id="@+id/menu_favorites"
-    android:title="@string/kedvencek"
-    app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_favorites"
+        android:title="@string/favorites"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_lang_hu"
+        android:title="@string/language_hu"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_lang_en"
+        android:title="@string/language_en"
+        app:showAsAction="never" />
+
 </menu>
