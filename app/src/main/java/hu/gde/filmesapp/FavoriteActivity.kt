@@ -1,5 +1,6 @@
 package hu.gde.filmesapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,8 +24,20 @@ class FavoriteActivity : AppCompatActivity() {
 
         val favorites = movieDao.getAllFavorites()
 
-        adapter = MovieAdapter(favorites) { movie ->
-            // kedvencekből is lehessen átlépni a részletes nézetre
+        val movies = favorites.map { fav ->
+            Movie(
+                title = fav.title,
+                director = fav.director,
+                year = fav.year,
+                runtimeMinutes = fav.runtimeMinutes,
+                description = fav.description,
+                rating = fav.rating,
+                genre = fav.genre
+            )
+        }
+
+        adapter = MovieAdapter(movies) { movie ->
+            // kedvencekből részletes nézet
             val intent = Intent(this, MovieDetailActivity::class.java)
             intent.putExtra("movie", movie)
             startActivity(intent)
