@@ -17,14 +17,14 @@
             android:layout_weight="1"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:text="Film címe" />
+            android:text="@string/movie_name" />
 
         <!-- ⭐ Csillag  -->
         <TextView
             android:id="@+id/textFavoriteStar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="★"
+            android:text="@string/star"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#FFD600"
@@ -36,11 +36,11 @@
         android:id="@+id/textDirector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rendező" />
+        android:text="@string/director" />
 
     <TextView
         android:id="@+id/textYearAndLength"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Évszám • Hossz" />
+        android:text="@string/year_length" />
 </LinearLayout>
