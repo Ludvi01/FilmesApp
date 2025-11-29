@@ -34,7 +34,7 @@ class MovieDetailActivity : AppCompatActivity() {
         movie?.let { m ->
             textTitle.text = m.title
             textDirector.text = m.director
-            textYearRuntime.text = "${m.year} • ${m.runtimeMinutes} perc"
+            textYearRuntime.text = "${m.year} • ${m.duration} perc"
             textGenre.text = "Műfaj: ${m.genre ?: "-"}"
             textRating.text = "Értékelés: ${m.rating ?: "-"} /10"
             textDescription.text = m.description ?: "Nincs leírás."
@@ -47,7 +47,7 @@ class MovieDetailActivity : AppCompatActivity() {
                     title = m.title,
                     director = m.director,
                     year = m.year,
-                    runtimeMinutes = m.runtimeMinutes,
+                    duration = m.duration,
                     description = m.description,
                     rating = m.rating,
                     genre = m.genre
